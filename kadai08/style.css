@@ -10,7 +10,7 @@ header {
     text-align: center;
 }
 nav{
-    padding-left: 160px;
+    margin: auto;
 }
 nav ul{
     display:flex;
