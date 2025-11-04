@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>人口の多い国ランキング</h1>
-    <ol id="schedule">
+    <ol id="country">
         <li>中国</li>
         <li>インド</li>
         <li>アメリカ</li>
@@ -14,13 +14,13 @@
     </ol>
     <button onclick="showflag()">国旗で表示</button>
 <script>
-let flag = [img ="flag_CHN.png",img ="flag_IND.png",img ="flag_USA.png",img ="flag_IDN.png"];
-let list = document.querySelectorAll('#schedule li');
+let flag = ['<img src ="flag_CHN.png">','<img src="flag_IND.png">','<img src ="flag_USA.png">','<img src ="flag_IDN.png">'];
+let list = document.querySelectorAll('#country li');
 function showflag() {
-    list[0].textContent = flag[0];
-    list[1].textContent = flag[1];
-    list[2].textContent = flag[2];
-    list[3].textContent = flag[3];
+    list[0].innerHTML = flag[0];
+    list[1].innerHTML = flag[1];
+    list[2].innerHTML = flag[2];
+    list[3].innerHTML = flag[3];
 }
 </script>
 </body>
