@@ -7,9 +7,25 @@
 <body>
     <h1>写真の一覧</h1>
     <p>以下のボタンをクリックすると、写真が一覧表示されます。</p>
-    <button onclick="showflag()">写真を表示</button>
+    <button id="show" onclick="showphoto()">写真を表示</button>
+    <div id="photo"></div>
 <script>
-    
+    let list =['<img src ="photo_1.jpg">','<img src ="photo_2.jpg">',
+    '<img src ="photo_3.jpg">','<img src ="photo_4.jpg">',
+    '<img src ="photo_5.jpg">','<img src ="photo_6.jpg">',
+    '<img src ="photo_7.jpg">','<img src ="photo_8.jpg">']
+    function showphoto() {
+    let container = document.getElementById('photo');
+    container.insertAdjacentHTML('beforeend',list[0]);
+    container.insertAdjacentHTML('beforeend',list[1]);
+    container.insertAdjacentHTML('beforeend',list[2]);
+    container.insertAdjacentHTML('beforeend',list[3]);
+    container.insertAdjacentHTML('beforeend',list[4]);
+    container.insertAdjacentHTML('beforeend',list[5]);
+    container.insertAdjacentHTML('beforeend',list[6]);
+    container.insertAdjacentHTML('beforeend',list[7]);
+    document.getElementById('show').remove();
+    }
 </script>
 </body>
 </html>
