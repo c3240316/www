@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>複数の要素の取得</title>
+</head>
+<body>
+    <h1>人口の多い国ランキング</h1>
+    <ol id="schedule">
+        <li>中国</li>
+        <li>インド</li>
+        <li>アメリカ</li>
+        <li>インドネシア</li>
+    </ol>
+    <button onclick="showflag()">国旗で表示</button>
+<script>
+let flag = [img ="flag_CHN.png",img ="flag_IND.png",img ="flag_USA.png",img ="flag_IDN.png"];
+let list = document.querySelectorAll('#schedule li');
+function showflag() {
+    list[0].textContent = flag[0];
+    list[1].textContent = flag[1];
+    list[2].textContent = flag[2];
+    list[3].textContent = flag[3];
+}
+</script>
+</body>
+</html>
