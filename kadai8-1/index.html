@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>複数の要素の取得 </title>
+</head>
+<body>
+    <h1>写真の一覧</h1>
+    <p>以下のボタンをクリックすると、写真が一覧表示されます。</p>
+    <button id="show" onclick="showphoto()">写真を表示</button>
+    <div id="photo"></div>
+<script>
+    let list =['<img src ="photo_1.jpg">','<img src ="photo_2.jpg">',
+    '<img src ="photo_3.jpg">','<img src ="photo_4.jpg">',
+    '<img src ="photo_5.jpg">','<img src ="photo_6.jpg">',
+    '<img src ="photo_7.jpg">','<img src ="photo_8.jpg">']
+    function showphoto() {
+        let container = document.getElementById('photo');
+        for (let i = 0; i < list.length; i++) {
+            container.insertAdjacentHTML('beforeend',list[i]);
+        }
+    document.getElementById('show').remove();
+    }
+</script>
+</body>
+</html>
