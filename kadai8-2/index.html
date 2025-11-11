@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>繰り返し処理</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 500px;
+        height: 260px;
+    }
+    td, th {
+        border: solid 1px #000000;
+        width: 40px;
+        padding: 5px;
+        text-align: center;
+    }
+    th {
+        background-color: #99CCCC;
+    }
+</style>
+</head>
+    <body onload="createTable()">
+    <h1>入場料の一覧</h1>
+    <table>
+        <thead id="t_head"></thead>
+        <tbody id="t_body"></tbody>
+    </table>
+<script>
+    function createTable() {
+    // 各区分の料金
+    const prices = {
+        "大人": 800,
+        "高校生": 680,
+        "中学生": 450,
+        "小学生": 380
+    };
+
+    // ---------------- ヘッダー行の作成 ----------------
+    let headRow = '<tr><th></th>';
+    for (let type in prices) {
+        headRow += '<th>' + type + '</th>';
+    }
+    headRow += '</tr>';
+    document.getElementById('t_head').insertAdjacentHTML('beforeend', headRow);
+
+    // ---------------- データ部分の作成 ----------------
+    for (let i = 1; i <= 5; i++) {
+        let row = '<tr><th>' + i + '人</th>';
+        for (let type in prices) {
+            row += '<td>' + (prices[type] * i) + '円</td>';
+        }
+        row += '</tr>';
+        document.getElementById('t_body').insertAdjacentHTML('beforeend', row);
+    }
+}
+</script>
+</body>
+</html>
