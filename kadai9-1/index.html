@@ -9,11 +9,46 @@
     <p>ボタンをクリックすると、クリック回数に応じて結果が変わります。<br>
         JavaScript の for 構文を使って処理を作ってみましょう。</p>
         <p>クリック回数 <span id="count">0</span> 回</p>
-        <button id="btn" onclick="click()">クリック</button>
+        <button id="btn" onclick="clickbtn()">クリック</button>
         <p>結果</p>
         <div id="result">ここに結果が表示されます</div>
 <script>
+    let count = 0;
+    function clickbtn() {
+        count++;
+        const countSpan = document.getElementById("count");
+        const resultDiv = document.getElementById("result");
 
+        let output = "";
+            if (count === 1) {
+                for (let i = 0; i < 1; i++) {
+                    output += "★";
+                }
+            } else if (count === 2) {
+                for (let i = 0; i < 5; i++) {
+                    output += "★";
+                }
+            } else if (count === 3) {
+                for (let i = 1; i <= 5; i++) {
+                    output += i + " ";
+                }
+            } else if (count === 4) {
+                for (let i = 2; i <= 10; i += 2) {
+                    output += i + " ";
+                }
+            } else if (count === 5) {
+                let sum = 0;
+                for (let i = 1; i <= 5; i++) {
+                    sum += i;
+                }
+                output = "合計値：" + sum;
+            } else if (count >= 6) {
+                output = "クリアしました。カウントを0に戻します。";
+                count = 0;
+        }
+        countSpan.textContent = count;
+        resultDiv.textContent = output;
+    }
 </script>
 </body>
 </html>
