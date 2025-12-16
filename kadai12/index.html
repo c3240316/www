@@ -19,7 +19,20 @@
         <button onclick="show()">結果を見る</button>
         <div id="message">ここに結果が表示されます</div>
 <script>
-
+    function show() {
+        function gcd(a, b) {
+            return b === 0 ? a : gcd(b, a % b);
+        }
+        function lcm(a, b) {
+            return (a * b) / gcd(a, b);
+        }
+        let result = 1;
+        for (let i = 1; i <= 10; i++) {
+            result = lcm(result, i);
+        }
+        document.getElementById("message").textContent =
+            "答えは" + result + "です。";
+    }
 </script>
 </body>
 </html>
